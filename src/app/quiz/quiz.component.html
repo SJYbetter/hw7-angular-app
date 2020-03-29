@@ -1,0 +1,19 @@
+<div>
+  <h2>Quiz</h2>
+  <ul>
+    <li *ngFor="let question of questions">
+      <div [ngSwitch]="question.type">
+        <app-true-false-questions>
+
+        </app-true-false-questions>
+
+        <app-multi-questions>
+
+        </app-multi-questions>
+
+
+      </div>
+
+    </li>
+  </ul>
+</div>

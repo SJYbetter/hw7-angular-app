@@ -1,0 +1,17 @@
+<div>
+  <div class="row">
+    <a href="/table/courses">X</a>
+    <h3>Module List</h3>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item"
+        [class]="{'active': moduleId === module._id}"
+        *ngFor="let module of modules">
+      <a routerLink="/table/courses/{{courseId}}/modules/{{module._id}}">
+        {{module.title}}
+      </a>
+    </li>
+  </ul>
+</div>
+
