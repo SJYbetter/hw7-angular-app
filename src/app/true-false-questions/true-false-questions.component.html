@@ -1,28 +1,27 @@
-<!--
-<p>true-false-questions works!</p>
-<h3>{{question.title}}</h3>
-<h4>{{question.question}}</h4>
+<h4>{{question.title}}</h4>
+<h5>{{question.question}}</h5>
 <label>
-  <input type="radio" value= 'true'
-         [ngModel]="answer"
+  <input type="radio"
+         value="true"
+         [(ngModel)]="answer"
          name="{{question._id}}"/>
   True
 </label>
-<br>
+<br/>
 <label>
-  <input type="radio" value='false' name="{{question._id}}"/>
+  <input type="radio"
+         value="false"
+         [(ngModel)]="answer"
+         name="{{question._id}}"/>
   False
 </label>
-
-Your answer {{answer}}
-<br>
-Correct answer {{question.correct}}
-<br>
-<span [hidden]="answer && answer !== question.correct">Yeah!</span>
-<span [hidden]="answer && answer === question.correct">Ops!</span>
-
-
-
+<br/>
+Your answer: {{answer}}
+<br/>
+Correct answer: {{question.correct}}
+<br/>
+<span [hidden]="answer !== question.correct">Yay!</span>
+<span [hidden]="answer === question.correct">Oops</span>
 
 
 
