@@ -1,0 +1,11 @@
+.right{
+  color: chartreuse;
+  font-family: Courier, serif;
+  background-color: gold;
+}
+
+.wrong{
+  color: crimson;
+  font-family: Courier, serif;
+  background-color: gold;
+}

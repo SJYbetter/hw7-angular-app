@@ -1,0 +1,34 @@
+ <div class="row">
+    <h5>{{question.question}}</h5>
+    <span>&nbsp;</span>
+    <span class="right" [hidden]="!(grading && question.correct === question.answer)">RIGHT</span>
+    <span class="wrong" [hidden]="!(grading && question.correct !== question.answer)">WRONG</span>
+  </div>
+
+<ul class="list-group" *ngFor="let choice of question.choices">
+  <li class="list-group-item" [ngClass]="{'list-group-item-success':(grading && question.correct === question.answer && question.correct===this.choice)||
+(grading && question.correct !== question.answer && question.correct===this.choice),
+'list-group-item-danger': grading && question.correct !== question.answer && question.answer===this.choice}">
+    <input type="radio"
+           value="{{choice}}"
+           [(ngModel)]="question.answer"
+           name="{{question._id}}"/>
+    {{choice}}
+
+    <span class="right float-right" [hidden]="!((grading && question.correct === question.answer && question.correct===this.choice)||
+(grading && question.correct !== question.answer && question.correct===this.choice))">Right</span>
+
+    <span class="wrong float-right" [hidden]="!(grading && question.correct !== question.answer && question.answer===this.choice)">Wrong</span>
+  </li>
+
+</ul>
+  <br>
+  Your answer: {{question.answer | titlecase}}
+  <br/>
+  <br>
+  <button class="btn-dark" (click)="grade()">GRADE</button>
+
+
+
+
+

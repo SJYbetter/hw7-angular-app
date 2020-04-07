@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrueFalseQuestionsComponent } from './true-false-questions.component';
+import { TrueFalseQuestionComponent } from './true-false-question.component';
 
-describe('TrueFalseQuestionsComponent', () => {
-  let component: TrueFalseQuestionsComponent;
-  let fixture: ComponentFixture<TrueFalseQuestionsComponent>;
+describe('TrueFalseQuestionComponent', () => {
+  let component: TrueFalseQuestionComponent;
+  let fixture: ComponentFixture<TrueFalseQuestionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrueFalseQuestionsComponent ]
+      declarations: [ TrueFalseQuestionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrueFalseQuestionsComponent);
+    fixture = TestBed.createComponent(TrueFalseQuestionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

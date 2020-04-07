@@ -1,0 +1,43 @@
+ <div class="row">
+    <h5>{{question.question}}</h5>
+    <span>&nbsp;</span>
+    <span class="right" [hidden]="!(grading && question.correct === question.answer)">RIGHT</span>
+    <span class="wrong" [hidden]="!(grading && question.correct !== question.answer)">WRONG</span>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item" [ngClass]="{'list-group-item-success':((grading && question.correct === question.answer && question.correct==='true')||
+    (grading && question.correct !== question.answer && question.correct==='true')),
+                                            'list-group-item-danger': (grading && question.correct !== question.answer && question.correct!=='true')}">
+        <input type="radio"
+               value="true"
+               [(ngModel)]="question.answer"
+               name="{{question._id}}"/>
+        True
+        <span class="right float-right" [hidden]="!((grading && question.correct === question.answer && question.correct==='true')||
+    (grading && question.correct !== question.answer && question.correct==='true'))">Right</span>
+        <span class="wrong float-right" [hidden]="!(grading && question.correct !== question.answer && question.correct!=='true')">Wrong</span>
+
+    </li>
+    <li class="list-group-item" [ngClass]="{'list-group-item-success':((grading && question.correct === question.answer && question.correct==='false')||
+  (grading && question.correct !== question.answer && question.correct==='false')),
+      'list-group-item-danger':(grading && question.correct !== question.answer && question.correct!=='false')}">
+      <input type="radio"
+             value="false"
+             [(ngModel)]="question.answer"
+             name="{{question._id}}"/>
+      False
+      <span class="right float-right" [hidden]="!((grading && question.correct === question.answer && question.correct==='false')||
+  (grading && question.correct !== question.answer && question.correct==='false'))">Right</span>
+      <span class="wrong float-right" [hidden]="!(grading && question.correct !== question.answer && question.correct!=='false')">Wrong</span>
+    </li>
+  </ul>
+
+  <br/>
+  Your answer: {{question.answer | titlecase}}
+  <br/>
+  <br/>
+  <button class="btn-dark" (click)="grade()">GRADE</button>
+
+
+
